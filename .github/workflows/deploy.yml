@@ -28,7 +28,7 @@ jobs:
 
       # Step 4: Build the Angular app
       - name: Build Angular app
-        run: npm run build --base-href=/cicd/
+        run: npm run build 
 
       # Step 5: Create CNAME file
       - name: Create CNAME file
@@ -39,4 +39,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.TOKEN }}
-          publish_dir: ./dist/cicd/browser
+          publish_dir: ./dist/weathersense/browser
