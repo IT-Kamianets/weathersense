@@ -3,42 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0e5eba">
     <title>Прогноз погоди у Кам'янці-Подільському</title>
-    <meta name="description" content="Прогноз погоди у Кам'янці-Подільському на тиждень">
-    <link rel="stylesheet" href="app.component.scss">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Погода у Кам'янці-Подільському</h1>
-        <form>
-            <input type="search" placeholder="Назва населеного пункту" aria-label="Пошук">
-            <button type="submit">Шукати</button>
-        </form>
-    </header>
-
-    <main>
-        <section class="current-weather">
-            <h2>Поточна погода</h2>
-            <p>Температура: +10°C</p>
-            <p>Стан: Суцільна хмарність</p>
-        </section>
-
-        <section class="weekly-forecast">
+    <div class="container">
+        <header>
+            <h1>Погода у Кам'янці-Подільському</h1>
+            <form class="search-form">
+                <input type="search" placeholder="Назва населеного пункту" aria-label="Пошук населенного пункту" />
+                <button type="submit">Шукати</button>
+            </form>
+        </header>
+        <main>
             <h2>Прогноз на тиждень</h2>
-            <ul>
-                <li>Понеділок: +12°C, Ясно</li>
-                <li>Вівторок: +10°C, Хмарно</li>
-                <li>Середа: +11°C, Дощ</li>
-                <li>Четвер: +9°C, Ясно</li>
-                <li>П'ятниця: +8°C, Хмарно</li>
-                <li>Субота: +7°C, Дощ</li>
-                <li>Неділя: +9°C, Ясно</li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Прогноз погоди. Всі права захищені.</p>
-    </footer>
+            <div class="forecast">
+                <div class="day">
+                    <p>Вівторок</p>
+                    <p>15°C</p>
+                    <p>Дощ</p>
+                </div>
+                <div class="day">
+                    <p>Середа</p>
+                    <p>16°C</p>
+                    <p>Сонячно</p>
+                </div>
+                <!-- Додай більше днів за потреби -->
+            </div>
+        </main>
+        <footer>
+            <p>&copy; 2024 Прогноз погоди</p>
+        </footer>
+    </div>
 </body>
 </html>
