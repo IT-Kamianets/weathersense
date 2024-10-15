@@ -1,62 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Прогноз погоди</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #007bff;
-        }
-        .weather-container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .weather-info {
-            margin: 20px 0;
-        }
-        .temperature {
-            font-size: 2em;
-            font-weight: bold;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.8em;
-            color: #666;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Прогноз погоди у Кам'янці-Подільському</title>
+    <meta name="description" content="Прогноз погоди у Кам'янці-Подільському на тиждень">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Погода у Кам'янці-Подільському</h1>
+        <form>
+            <input type="search" placeholder="Назва населеного пункту" aria-label="Пошук">
+            <button type="submit">Шукати</button>
+        </form>
+    </header>
 
-    <h1>Прогноз погоди</h1>
+    <main>
+        <section class="current-weather">
+            <h2>Поточна погода</h2>
+            <p>Температура: +10°C</p>
+            <p>Стан: Суцільна хмарність</p>
+        </section>
 
-    <div class="weather-container">
-        <div class="weather-info">
-            <h2>Місто: Київ</h2>
-            <div class="temperature">Температура: 20°C</div>
-            <div>Стан погоди: Сонячно</div>
-            <div>Вологість: 45%</div>
-            <div>Вітер: 5 м/с</div>
-        </div>
-    </div>
+        <section class="weekly-forecast">
+            <h2>Прогноз на тиждень</h2>
+            <ul>
+                <li>Понеділок: +12°C, Ясно</li>
+                <li>Вівторок: +10°C, Хмарно</li>
+                <li>Середа: +11°C, Дощ</li>
+                <li>Четвер: +9°C, Ясно</li>
+                <li>П'ятниця: +8°C, Хмарно</li>
+                <li>Субота: +7°C, Дощ</li>
+                <li>Неділя: +9°C, Ясно</li>
+            </ul>
+        </section>
+    </main>
 
     <footer>
-        &copy; 2024 Прогноз погоди
+        <p>&copy; 2024 Прогноз погоди. Всі права захищені.</p>
     </footer>
-
 </body>
 </html>
