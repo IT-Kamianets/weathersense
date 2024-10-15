@@ -7,20 +7,6 @@
     <link rel="stylesheet" href="app.component.scss">
 </head>
 <body>
-    <?php
-    // Визначаємо сьогоднішню дату
-    $today = date('l, d F'); // формат: "Monday, 15 October"
-    $days = [
-        "Вівторок, 15 жовтня",
-        "Середа, 16 жовтня",
-        "Четвер, 17 жовтня",
-        "П'ятниця, 18 жовтня",
-        "Субота, 19 жовтня",
-        "Неділя, 20 жовтня",
-        "Понеділок, 21 жовтня"
-    ];
-    ?>
-    
     <header>
         <div class="logo">
             <img src="logo.png" alt="Sinoptik Logo">
@@ -32,14 +18,48 @@
         <section class="forecast">
             <h2>Прогноз погоди на найближчі дні</h2>
             <div class="forecast-days">
-                <?php foreach ($days as $day): ?>
-                    <div class="day <?php echo ($day === $today) ? 'today' : ''; ?>">
-                        <p class="date"><?php echo $day; ?></p>
-                        <div class="weather-icon">🌧️</div>
-                        <p class="temp-max">+10°C</p>
-                        <p class="temp-min">+3°C</p>
-                    </div>
-                <?php endforeach; ?>
+                <div class="day today">
+                    <p class="date">Вівторок, 15 жовтня</p>
+                    <div class="weather-icon">🌧️</div>
+                    <p class="temp-max">+10°C</p>
+                    <p class="temp-min">+3°C</p>
+                </div>
+                <div class="day">
+                    <p class="date">Середа, 16 жовтня</p>
+                    <div class="weather-icon">☁️</div>
+                    <p class="temp-max">+16°C</p>
+                    <p class="temp-min">+5°C</p>
+                </div>
+                <div class="day">
+                    <p class="date">Четвер, 17 жовтня</p>
+                    <div class="weather-icon">☀️</div>
+                    <p class="temp-max">+18°C</p>
+                    <p class="temp-min">+8°C</p>
+                </div>
+                <div class="day">
+                    <p class="date">П'ятниця, 18 жовтня</p>
+                    <div class="weather-icon">☀️</div>
+                    <p class="temp-max">+19°C</p>
+                    <p class="temp-min">+9°C</p>
+                </div>
+                <div class="day">
+                    <p class="date">Субота, 19 жовтня</p>
+                    <div class="weather-icon">🌧️</div>
+                    <p class="temp-max">+19°C</p>
+                    <p class="temp-min">+7°C</p>
+                </div>
+                <div class="day">
+                    <p class="date">Неділя, 20 жовтня</p>
+                    <div class="weather-icon">🌤️</div>
+                    <p class="temp-max">+15°C</p>
+                    <p class="temp-min">+6°C</p>
+                </div>
+                <div class="day">
+                    <p class="date">Понеділок, 21 жовтня</p>
+                    <div class="weather-icon">☀️</div>
+                    <p class="temp-max">+17°C</p>
+                    <p class="temp-min">+8°C</p>
+                </div>
             </div>
         </section>
         <section class="detailed-weather">
@@ -66,7 +86,41 @@
                     <td>91%</td>
                     <td>2 м/с</td>
                 </tr>
-                <!-- Додайте інші години за потреби -->
+                <tr>
+                    <td>09:00</td>
+                    <td>+7°C</td>
+                    <td>740 мм</td>
+                    <td>85%</td>
+                    <td>3 м/с</td>
+                </tr>
+                <tr>
+                    <td>12:00</td>
+                    <td>+10°C</td>
+                    <td>738 мм</td>
+                    <td>70%</td>
+                    <td>5 м/с</td>
+                </tr>
+                <tr>
+                    <td>15:00</td>
+                    <td>+12°C</td>
+                    <td>737 мм</td>
+                    <td>65%</td>
+                    <td>4 м/с</td>
+                </tr>
+                <tr>
+                    <td>18:00</td>
+                    <td>+9°C</td>
+                    <td>740 мм</td>
+                    <td>80%</td>
+                    <td>3 м/с</td>
+                </tr>
+                <tr>
+                    <td>21:00</td>
+                    <td>+6°C</td>
+                    <td>741 мм</td>
+                    <td>85%</td>
+                    <td>2 м/с</td>
+                </tr>
             </table>
         </section>
     </main>
