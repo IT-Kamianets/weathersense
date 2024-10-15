@@ -1,63 +1,91 @@
-$primary-color: #0e5eba;
-$secondary-color: #f8f8f8;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: $secondary-color;
+    background-color: #f0f0f0;
+    padding: 20px;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #005f99;
+    padding: 10px;
+    color: white;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 20px;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+main {
+    margin-top: 20px;
+}
+
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.forecast-days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.day {
+    background-color: white;
+    border-radius: 8px;
     padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-    header {
-        text-align: center;
-        background-color: $primary-color;
-        color: white;
-        padding: 20px;
+.date {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
-        .search-form {
-            margin-top: 10px;
+.weather-icon {
+    font-size: 2em;
+    margin: 10px 0;
+}
 
-            input[type="search"] {
-                padding: 10px;
-                width: 70%;
-            }
+.temp-max {
+    color: #e74c3c;
+    font-weight: bold;
+}
 
-            button {
-                padding: 10px;
-                background-color: white;
-                color: $primary-color;
-                border: none;
-                cursor: pointer;
-            }
-        }
+.temp-min {
+    color: #3498db;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .forecast-days {
+        justify-content: center;
     }
-
-    main {
-        margin: 20px 0;
-
-        .forecast {
-            display: flex;
-            justify-content: space-between;
-
-            .day {
-                background-color: white;
-                border: 1px solid $primary-color;
-                border-radius: 5px;
-                padding: 10px;
-                text-align: center;
-                flex: 1;
-                margin: 0 5px;
-            }
-        }
+    .day {
+        width: 100%;
+        margin-bottom: 20px;
     }
+}
 
-    footer {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 0.9em;
+@media (min-width: 769px) and (max-width: 1024px) {
+    .day {
+        width: 30%;
     }
 }
