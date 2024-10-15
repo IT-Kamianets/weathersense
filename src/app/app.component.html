@@ -9,9 +9,10 @@
 <body>
     <header>
         <div class="logo">
-            <img src="logo.png" alt="">
+            <img src="logo.png" alt="Sinoptik Logo">
         </div>
         <h1>Погода у Кам'янці-Подільському</h1>
+        <p>Хмельницька область, Кам'янець-Подільський район</p>
     </header>
     <main>
         <section class="forecast">
@@ -34,19 +35,35 @@
                     <p class="temp-max">+18°C</p>
                     <p class="temp-min">+8°C</p>
                 </div>
-                <div class="day">
-                    <p class="date">П'ятниця, 18 жовтня</p>
-                    <div class="weather-icon">☀️</div>
-                    <p class="temp-max">+19°C</p>
-                    <p class="temp-min">+9°C</p>
-                </div>
-                <div class="day">
-                    <p class="date">Субота, 19 жовтня</p>
-                    <div class="weather-icon">🌧️</div>
-                    <p class="temp-max">+19°C</p>
-                    <p class="temp-min">+7°C</p>
-                </div>
+                <!-- Додати інші дні за потреби -->
             </div>
+        </section>
+        <section class="detailed-weather">
+            <h2>Детальний прогноз на день</h2>
+            <table>
+                <tr>
+                    <th>Час</th>
+                    <th>Температура</th>
+                    <th>Тиск</th>
+                    <th>Вологість</th>
+                    <th>Вітер</th>
+                </tr>
+                <tr>
+                    <td>03:00</td>
+                    <td>+4°C</td>
+                    <td>741 мм</td>
+                    <td>90%</td>
+                    <td>2 м/с</td>
+                </tr>
+                <tr>
+                    <td>06:00</td>
+                    <td>+4°C</td>
+                    <td>741 мм</td>
+                    <td>91%</td>
+                    <td>2 м/с</td>
+                </tr>
+                <!-- Додати інші часові дані за потреби -->
+            </table>
         </section>
     </main>
 </body>
