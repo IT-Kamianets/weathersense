@@ -4,59 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Прогноз погоди</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #007bff;
-        }
-        .weather-container {
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .weather-info {
-            margin: 20px 0;
-        }
-        .temperature {
-            font-size: 2em;
-            font-weight: bold;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.8em;
-            color: #666;
-        }
-    </style>
+    <link rel="stylesheet" href="app.component.scss">
 </head>
 <body>
-
-    <h1>Прогноз погоди</h1>
-
-    <div class="weather-container" *ngIf="weather">
-        <div class="weather-info">
-            <h2>Місто: Київ</h2>
-            <div class="temperature">Температура: {{weather.main?.temp.toFixed(0)}}°C</div>
-            <div>Стан погоди: Сонячно</div>
-            <div>Вологість: 45%</div>
-            <div>Вітер: 5 м/с</div>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Sinoptik Logo">
         </div>
-    </div>
-
-    <footer>
-        &copy; 2024 Прогноз погоди
-    </footer>
-
+        <h1>Погода у Кам'янці-Подільському</h1>
+        <p>Хмельницька область, Кам'янець-Подільський район</p>
+    </header>
+    <main>
+        <section class="forecast">
+            <h2>Прогноз погоди на найближчі дні</h2>
+            <div class="forecast-days">
+                <div class="day today">
+                    <p class="date">Вівторок, 15 жовтня</p>
+                    <div class="weather-icon">🌧️</div>
+                    <p class="temp-max">{{weather?.main?.temp.toFixed(0)}}°C</p>
+                    <p class="temp-min">+3°C</p>
+                </div>
+                <div class="day">
+                    <p class="date">Середа, 16 жовтня</p>
+                    <div class="weather-icon">☁️</div>
+                    <p class="temp-max">+16°C</p>
+                    <p class="temp-min">+5°C</p>
+                </div>
+                <div class="day">
+                    <p class="date">Четвер, 17 жовтня</p>
+                    <div class="weather-icon">☀️</div>
+                    <p class="temp-max">+18°C</p>
+                    <p class="temp-min">+8°C</p>
+                </div>
+                <div class="day">
+                    <p class="date">П'ятниця, 18 жовтня</p>
+                    <div class="weather-icon">☀️</div>
+                    <p class="temp-max">+19°C</p>
+                    <p class="temp-min">+9°C</p>
+                </div>
+                <div class="day">
+                    <p class="date">Субота, 19 жовтня</p>
+                    <div class="weather-icon">🌧️</div>
+                    <p class="temp-max">+19°C</p>
+                    <p class="temp-min">+7°C</p>
+                </div>
+                <div class="day">
+                    <p class="date">Неділя, 20 жовтня</p>
+                    <div class="weather-icon">🌤️</div>
+                    <p class="temp-max">+15°C</p>
+                    <p class="temp-min">+6°C</p>
+                </div>
+                <div class="day">
+                    <p class="date">Понеділок, 21 жовтня</p>
+                    <div class="weather-icon">☀️</div>
+                    <p class="temp-max">+17°C</p>
+                    <p class="temp-min">+8°C</p>
+                </div>
+            </div>
+        </section>
+        <section class="detailed-weather">
+            <h2>Детальний прогноз на день</h2>
+            <table>
+                <tr>
+                    <th>Час</th>
+                    <th>Температура</th>
+                    <th>Тиск</th>
+                    <th>Вологість</th>
+                    <th>Вітер</th>
+                </tr>
+                <tr>
+                    <td>03:00</td>
+                    <td>+4°C</td>
+                    <td>741 мм</td>
+                    <td>90%</td>
+                    <td>2 м/с</td>
+                </tr>
+                <tr>
+                    <td>06:00</td>
+                    <td>+4°C</td>
+                    <td>741 мм</td>
+                    <td>91%</td>
+                    <td>2 м/с</td>
+                </tr>
+                <tr>
+                    <td>09:00</td>
+                    <td>+7°C</td>
+                    <td>740 мм</td>
+                    <td>85%</td>
+                    <td>3 м/с</td>
+                </tr>
+                <tr>
+                    <td>12:00</td>
+                    <td>+10°C</td>
+                    <td>738 мм</td>
+                    <td>70%</td>
+                    <td>5 м/с</td>
+                </tr>
+                <tr>
+                    <td>15:00</td>
+                    <td>+12°C</td>
+                    <td>737 мм</td>
+                    <td>65%</td>
+                    <td>4 м/с</td>
+                </tr>
+                <tr>
+                    <td>18:00</td>
+                    <td>+9°C</td>
+                    <td>740 мм</td>
+                    <td>80%</td>
+                    <td>3 м/с</td>
+                </tr>
+                <tr>
+                    <td>21:00</td>
+                    <td>+6°C</td>
+                    <td>741 мм</td>
+                    <td>85%</td>
+                    <td>2 м/с</td>
+                </tr>
+            </table>
+        </section>
+    </main>
 </body>
 </html>
