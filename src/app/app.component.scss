@@ -67,10 +67,6 @@ main {
         &.active {
             background-color: #e0f7fa;
             border: 2px solid #00bcd4;
-
-            .day-details {
-                display: block;
-            }
         }
 
         .date {
@@ -98,6 +94,10 @@ main {
             margin-top: 15px;
             font-size: 0.9em;
             color: #666;
+
+            &.visible {
+                display: block;
+            }
         }
     }
 }
