@@ -5,110 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Прогноз погоди</title>
     <link rel="stylesheet" href="app.component.scss">
-    <style>
-        /* Ваш SCSS-код тут (перетворений у CSS для прикладу) */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            text-align: center;
-            padding: 1em;
-            background-color: #0077b6;
-            color: white;
-        }
-
-        .logo img {
-            height: 50px;
-        }
-
-        h1 {
-            margin-top: 10px;
-            font-size: 1.8em;
-        }
-
-        p {
-            font-size: 1em;
-            margin-top: 5px;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        .forecast {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 1em;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            color: #333;
-        }
-
-        .forecast-days {
-            display: flex;
-            justify-content: space-between;
-            gap: 1em;
-            flex-wrap: nowrap; /* Не переносити блоки на новий рядок */
-            overflow-x: auto; /* Прокрутка, якщо екран замалий для всіх блоків */
-            padding: 1em 0;
-        }
-
-        .day {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 1em;
-            width: 150px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0;
-            text-align: center;
-            position: relative;
-        }
-
-        label {
-            font-weight: bold;
-            display: block;
-            cursor: pointer;
-            color: #0077b6;
-            margin-top: 10px;
-        }
-
-        input[type="checkbox"] {
-            display: none;
-        }
-
-        .details {
-            display: none;
-            text-align: left;
-            margin-top: 10px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        input[type="checkbox"]:checked ~ .details {
-            display: block;
-        }
-
-        .day.today {
-            border: 2px solid #e74c3c; // Червона рамка для сьогоднішнього дня
-            background-color: #ffe4e1; // Світло-рожевий фон
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -197,25 +93,24 @@
                         <p><strong>Температура протягом дня:</strong> від +6°C до +15°C</p>
                         <p><strong>Вітер:</strong> Західний, 2 м/с</p>
                         <p><strong>Вологість:</strong> 70%</p>
-                        <p><strong>Атмосферний тиск:</strong> 736 мм рт. ст.</p>
+                        <p><strong>Атмосферний тиск:</strong> 739 мм рт. ст.</p>
+                    </div>
+                </div>
+                <!-- День 7 -->
+                <div class="day">
+                    <label for="day7">Понеділок, 21 жовтня ☀️ +17°C / +8°C</label>
+                    <input type="checkbox" id="day7">
+                    <div class="details">
+                        <p><strong>Схід сонця:</strong> 07:21</p>
+                        <p><strong>Захід сонця:</strong> 18:15</p>
+                        <p><strong>Температура протягом дня:</strong> від +8°C до +17°C</p>
+                        <p><strong>Вітер:</strong> Південно-західний, 3 м/с</p>
+                        <p><strong>Вологість:</strong> 68%</p>
+                        <p><strong>Атмосферний тиск:</strong> 738 мм рт. ст.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <script>
-        // Додаємо функцію для закриття всіх інших списків, коли один з них відкритий
-        document.querySelectorAll('.day input[type="checkbox"]').forEach((checkbox) => {
-            checkbox.addEventListener('change', () => {
-                if (checkbox.checked) {
-                    document.querySelectorAll('.day input[type="checkbox"]').forEach((otherCheckbox) => {
-                        if (otherCheckbox !== checkbox) {
-                            otherCheckbox.checked = false;
-                        }
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
