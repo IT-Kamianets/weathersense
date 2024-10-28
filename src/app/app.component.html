@@ -26,7 +26,18 @@
                     <div class="day-details">
                         <p>Схід сонця: 07:30</p>
                         <p>Захід сонця: 18:15</p>
-                        <p>Температура протягом дня: +3°C до +12°C</p>
+                        <p>Вологість: 75%</p>
+                    </div>
+                </div>
+                <div class="day" onclick="toggleDetails(this)">
+                    <p class="date">Середа, 16 жовтня</p>
+                    <div class="weather-icon">☁️</div>
+                    <p class="temp-max">+16°C</p>
+                    <p class="temp-min">+5°C</p>
+                    <div class="day-details">
+                        <p>Схід сонця: 06:32</p>
+                        <p>Захід сонця: 18:02</p>
+                        <p>Вологість: 80%</p>
                     </div>
                 </div>
                 <div class="day" onclick="toggleDetails(this)">
@@ -99,10 +110,10 @@
         </section>
     </main>
 
-   <script>
+    <script>
         function toggleDetails(element) {
-            const details = element.querySelector('.day-details');
-            details.classList.toggle('visible');
+            document.querySelectorAll('.day').forEach(day => day.classList.remove('active'));
+            element.classList.toggle('active');
         }
     </script>
 </body>
