@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Прогноз погоди</title>
     <link rel="stylesheet" href="app.component.scss">
-    <script src="script.js" defer></script> <!-- Підключення JavaScript -->
 </head>
 <body>
     <header>
@@ -24,105 +23,84 @@
                     <h3>Вівторок, 15 жовтня</h3>
                     <div class="temperature">+12°</div>
                     <img src="day1.png" alt="Weather" class="weather-icon">
-                    <div class="details">
-                        <button class="toggle-button">Деталі</button>
-                        <div class="dropdown-content">
-                            <div>Ранок: 9° <img src="morning.png" alt="Morning" class="time-icon"> Імовірність дощу: 5%</div>
-                            <div>Полудень: 14° <img src="noon.png" alt="Noon" class="time-icon"> Імовірність дощу: 2%</div>
-                            <div>Вечір: 10° <img src="evening.png" alt="Evening" class="time-icon"> Імовірність дощу: 12%</div>
-                            <div>Ніч: 6° <img src="night.png" alt="Night" class="time-icon"> Імовірність дощу: 3%</div>
-                        </div>
-                    </div>
+                    <select class="time-selector">
+                        <option>Ранок: 9° (Імовірність дощу: 5%)</option>
+                        <option>Полудень: 14° (Імовірність дощу: 2%)</option>
+                        <option>Вечір: 10° (Імовірність дощу: 12%)</option>
+                        <option>Ніч: 6° (Імовірність дощу: 3%)</option>
+                    </select>
                 </div>
                 <!-- День 2 -->
                 <div class="day">
                     <h3>Середа, 16 жовтня</h3>
                     <div class="temperature">+16°</div>
                     <img src="day2.png" alt="Weather" class="weather-icon">
-                    <div class="details">
-                        <button class="toggle-button">Деталі</button>
-                        <div class="dropdown-content">
-                            <div>Ранок: 10° <img src="morning.png" alt="Morning" class="time-icon"> Імовірність дощу: 2%</div>
-                            <div>Полудень: 16° <img src="noon.png" alt="Noon" class="time-icon"> Імовірність дощу: 1%</div>
-                            <div>Вечір: 11° <img src="evening.png" alt="Evening" class="time-icon"> Імовірність дощу: 0%</div>
-                            <div>Ніч: 7° <img src="night.png" alt="Night" class="time-icon"> Імовірність дощу: 0%</div>
-                        </div>
-                    </div>
+                    <select class="time-selector">
+                        <option>Ранок: 10° (Імовірність дощу: 2%)</option>
+                        <option>Полудень: 15° (Імовірність дощу: 0%)</option>
+                        <option>Вечір: 12° (Імовірність дощу: 1%)</option>
+                        <option>Ніч: 7° (Імовірність дощу: 0%)</option>
+                    </select>
                 </div>
                 <!-- День 3 -->
                 <div class="day">
                     <h3>Четвер, 17 жовтня</h3>
                     <div class="temperature">+18°</div>
                     <img src="day3.png" alt="Weather" class="weather-icon">
-                    <div class="details">
-                        <button class="toggle-button">Деталі</button>
-                        <div class="dropdown-content">
-                            <div>Ранок: 12° <img src="morning.png" alt="Morning" class="time-icon"> Імовірність дощу: 0%</div>
-                            <div>Полудень: 18° <img src="noon.png" alt="Noon" class="time-icon"> Імовірність дощу: 0%</div>
-                            <div>Вечір: 14° <img src="evening.png" alt="Evening" class="time-icon"> Імовірність дощу: 0%</div>
-                            <div>Ніч: 9° <img src="night.png" alt="Night" class="time-icon"> Імовірність дощу: 0%</div>
-                        </div>
-                    </div>
+                    <select class="time-selector">
+                        <option>Ранок: 11° (Імовірність дощу: 0%)</option>
+                        <option>Полудень: 16° (Імовірність дощу: 0%)</option>
+                        <option>Вечір: 13° (Імовірність дощу: 0%)</option>
+                        <option>Ніч: 8° (Імовірність дощу: 0%)</option>
+                    </select>
                 </div>
                 <!-- День 4 -->
                 <div class="day">
                     <h3>П'ятниця, 18 жовтня</h3>
                     <div class="temperature">+19°</div>
                     <img src="day4.png" alt="Weather" class="weather-icon">
-                    <div class="details">
-                        <button class="toggle-button">Деталі</button>
-                        <div class="dropdown-content">
-                            <div>Ранок: 13° <img src="morning.png" alt="Morning" class="time-icon"> Імовірність дощу: 10%</div>
-                            <div>Полудень: 19° <img src="noon.png" alt="Noon" class="time-icon"> Імовірність дощу: 5%</div>
-                            <div>Вечір: 15° <img src="evening.png" alt="Evening" class="time-icon"> Імовірність дощу: 10%</div>
-                            <div>Ніч: 11° <img src="night.png" alt="Night" class="time-icon"> Імовірність дощу: 3%</div>
-                        </div>
-                    </div>
+                    <select class="time-selector">
+                        <option>Ранок: 12° (Імовірність дощу: 10%)</option>
+                        <option>Полудень: 17° (Імовірність дощу: 5%)</option>
+                        <option>Вечір: 14° (Імовірність дощу: 15%)</option>
+                        <option>Ніч: 9° (Імовірність дощу: 10%)</option>
+                    </select>
                 </div>
                 <!-- День 5 -->
                 <div class="day">
                     <h3>Субота, 19 жовтня</h3>
                     <div class="temperature">+19°</div>
                     <img src="day5.png" alt="Weather" class="weather-icon">
-                    <div class="details">
-                        <button class="toggle-button">Деталі</button>
-                        <div class="dropdown-content">
-                            <div>Ранок: 12° <img src="morning.png" alt="Morning" class="time-icon"> Імовірність дощу: 20%</div>
-                            <div>Полудень: 19° <img src="noon.png" alt="Noon" class="time-icon"> Імовірність дощу: 15%</div>
-                            <div>Вечір: 14° <img src="evening.png" alt="Evening" class="time-icon"> Імовірність дощу: 20%</div>
-                            <div>Ніч: 10° <img src="night.png" alt="Night" class="time-icon"> Імовірність дощу: 5%</div>
-                        </div>
-                    </div>
+                    <select class="time-selector">
+                        <option>Ранок: 13° (Імовірність дощу: 20%)</option>
+                        <option>Полудень: 18° (Імовірність дощу: 15%)</option>
+                        <option>Вечір: 15° (Імовірність дощу: 25%)</option>
+                        <option>Ніч: 10° (Імовірність дощу: 20%)</option>
+                    </select>
                 </div>
                 <!-- День 6 -->
                 <div class="day">
                     <h3>Неділя, 20 жовтня</h3>
                     <div class="temperature">+15°</div>
                     <img src="day6.png" alt="Weather" class="weather-icon">
-                    <div class="details">
-                        <button class="toggle-button">Деталі</button>
-                        <div class="dropdown-content">
-                            <div>Ранок: 11° <img src="morning.png" alt="Morning" class="time-icon"> Імовірність дощу: 15%</div>
-                            <div>Полудень: 15° <img src="noon.png" alt="Noon" class="time-icon"> Імовірність дощу: 10%</div>
-                            <div>Вечір: 12° <img src="evening.png" alt="Evening" class="time-icon"> Імовірність дощу: 5%</div>
-                            <div>Ніч: 8° <img src="night.png" alt="Night" class="time-icon"> Імовірність дощу: 2%</div>
-                        </div>
-                    </div>
+                    <select class="time-selector">
+                        <option>Ранок: 9° (Імовірність дощу: 15%)</option>
+                        <option>Полудень: 14° (Імовірність дощу: 10%)</option>
+                        <option>Вечір: 11° (Імовірність дощу: 20%)</option>
+                        <option>Ніч: 7° (Імовірність дощу: 5%)</option>
+                    </select>
                 </div>
                 <!-- День 7 -->
                 <div class="day">
                     <h3>Понеділок, 21 жовтня</h3>
                     <div class="temperature">+17°</div>
                     <img src="day7.png" alt="Weather" class="weather-icon">
-                    <div class="details">
-                        <button class="toggle-button">Деталі</button>
-                        <div class="dropdown-content">
-                            <div>Ранок: 12° <img src="morning.png" alt="Morning" class="time-icon"> Імовірність дощу: 5%</div>
-                            <div>Полудень: 17° <img src="noon.png" alt="Noon" class="time-icon"> Імовірність дощу: 2%</div>
-                            <div>Вечір: 13° <img src="evening.png" alt="Evening" class="time-icon"> Імовірність дощу: 8%</div>
-                            <div>Ніч: 9° <img src="night.png" alt="Night" class="time-icon"> Імовірність дощу: 4%</div>
-                        </div>
-                    </div>
+                    <select class="time-selector">
+                        <option>Ранок: 10° (Імовірність дощу: 5%)</option>
+                        <option>Полудень: 15° (Імовірність дощу: 3%)</option>
+                        <option>Вечір: 12° (Імовірність дощу: 7%)</option>
+                        <option>Ніч: 8° (Імовірність дощу: 1%)</option>
+                    </select>
                 </div>
             </div>
         </section>
