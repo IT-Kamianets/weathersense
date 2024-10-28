@@ -1,3 +1,12 @@
+/* Color Variables */
+$primary-color: #005f99;
+$accent-color: #e74c3c;
+$background-color: #f0f0f0;
+$border-color: #ddd;
+$sunny-color: #FFD700;
+$cloudy-color: #C0C0C0;
+$rainy-color: #3498db;
+
 * {
     margin: 0;
     padding: 0;
@@ -6,35 +15,36 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: $background-color;
     padding: 20px;
 }
 
 header {
     text-align: center;
-    background-color: #005f99;
+    background-color: $primary-color;
     padding: 20px;
     color: white;
-}
 
-.logo img {
-    height: 50px;
-}
+    .logo img {
+        height: 50px;
+    }
 
-h1 {
-    margin-top: 10px;
-    font-size: 1.8em;
-}
+    h1 {
+        margin-top: 10px;
+        font-size: 1.8em;
+    }
 
-p {
-    font-size: 1em;
-    margin-top: 5px;
+    p {
+        font-size: 1em;
+        margin-top: 5px;
+    }
 }
 
 main {
     margin-top: 20px;
 }
 
+/* Forecast Section */
 .forecast {
     h2 {
         margin-bottom: 20px;
@@ -61,29 +71,34 @@ main {
                 margin-bottom: 10px;
             }
 
+            /* Weather Icon Styles */
             .weather-icon {
                 font-size: 2em;
                 margin: 10px 0;
+                &.sunny { color: $sunny-color; }
+                &.cloudy { color: $cloudy-color; }
+                &.rainy { color: $rainy-color; }
             }
 
             .temp-max {
-                color: #e74c3c;
+                color: $accent-color;
                 font-weight: bold;
             }
 
             .temp-min {
-                color: #3498db;
+                color: $rainy-color;
                 font-weight: bold;
             }
         }
 
         .day.today {
-            border: 2px solid #e74c3c; // Червона рамка
-            background-color: #ffe4e1; // Світло-рожевий фон
+            border: 2px solid $accent-color;
+            background-color: #ffe4e1;
         }
     }
 }
 
+/* Detailed Weather Section */
 .detailed-weather {
     margin-top: 30px;
 
@@ -97,7 +112,7 @@ main {
         border-collapse: collapse;
 
         th, td {
-            border: 1px solid #ddd;
+            border: 1px solid $border-color;
             padding: 8px;
             text-align: center;
         }
@@ -112,6 +127,7 @@ main {
     }
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
     .forecast-days {
         justify-content: center;
@@ -124,7 +140,22 @@ main {
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .day {
+    .forecast-days .day {
         width: 30%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .day {
+        width: 100%;
+        margin: 5px 0;
     }
 }
