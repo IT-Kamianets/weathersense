@@ -38,11 +38,15 @@ header {
 }
 
 h1 {
+   font-family: 'Lato', sans-serif;
+    font-weight: 400;
     margin-top: 15px;
     font-size: 2.2em; /* Збільшено заголовок */
 }
 
-p {
+p { 
+  font-family: 'Lato', sans-serif;
+    font-weight: 400;
     font-size: 1.1em; /* Збільшено розмір шрифту */
     margin-top: 5px;
 }
@@ -51,6 +55,8 @@ p {
     margin-top: 20px; /* Додано відступ з верхньої частини */
     
     h2 {
+       font-family: 'Lato', sans-serif;
+    font-weight: 400;
         margin-bottom: 20px;
         font-size: 1.8em; /* Збільшено розмір заголовка прогнозу */
         color: #333;
