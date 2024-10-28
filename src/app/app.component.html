@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Прогноз погоди</title>
-    <link rel="stylesheet" href="app.component.scss">
+    <link rel="stylesheet" href="style.scss">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <div class="logo">
             <img src="logo.png" alt="Sinoptik Logo">
@@ -14,13 +15,15 @@
         <h1>Погода у Кам'янці-Подільському</h1>
         <p>Хмельницька область, Кам'янець-Подільський район</p>
     </header>
+
+    <!-- Forecast Section -->
     <main>
         <section class="forecast">
             <h2>Прогноз погоди на найближчі дні</h2>
             <div class="forecast-days">
                 <div class="day today">
                     <p class="date">Вівторок, 15 жовтня</p>
-                    <div class="weather-icon">🌧️</div>
+                    <div class="weather-icon sunny">☀️</div>
                     <p class="temp-max">{{weather?.main?.temp.toFixed(0)}}°C</p>
                     <p class="temp-min">+3°C</p>
                 </div>
@@ -62,6 +65,7 @@
                 </div>
             </div>
         </section>
+        <!-- Detailed Weather Section -->
         <section class="detailed-weather">
             <h2>Детальний прогноз на день</h2>
             <table>
@@ -71,6 +75,13 @@
                     <th>Тиск</th>
                     <th>Вологість</th>
                     <th>Вітер</th>
+                </tr>
+                <tr>
+                    <td>03:00</td>
+                    <td>+4°C</td>
+                    <td>741 мм</td>
+                    <td>90%</td>
+                    <td>2 м/с</td>
                 </tr>
                 <tr>
                     <td>03:00</td>
