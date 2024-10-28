@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f0f0f0;
     padding: 20px;
 }
@@ -13,47 +13,59 @@ body {
 header {
     text-align: center;
     background-color: #005f99;
-    padding: 20px;
+    padding: 30px; // Збільшено відступ
     color: white;
+    border-radius: 10px; // Додано закруглення
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Додано тінь
 }
 
 .logo img {
-    height: 50px;
+    height: 60px; // Збільшено логотип
 }
 
 h1 {
-    margin-top: 10px;
-    font-size: 1.8em;
+    margin-top: 15px;
+    font-size: 2.2em; // Збільшено заголовок
 }
 
 p {
-    font-size: 1em;
+    font-size: 1.1em; // Збільшено розмір шрифту
     margin-top: 5px;
 }
 
 .forecast {
+    margin-top: 20px; // Додано відступ з верхньої частини
     h2 {
         margin-bottom: 20px;
-        font-size: 1.5em;
+        font-size: 1.8em; // Збільшено розмір заголовка прогнозу
         color: #333;
+        text-align: center; // Вирівнювання по центру
     }
 
     .forecast-days {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px; // Збільшено проміжок між днями
 
         .day {
             position: relative;
             background-color: white;
             border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px; // Збільшено внутрішній відступ
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+
+            &:hover {
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); // Тінь при наведенні
+            }
 
             label {
                 display: block;
                 font-weight: bold;
                 cursor: pointer;
+                font-size: 1.2em; // Збільшено розмір шрифту
+                margin-bottom: 10px; // Відступ знизу
+                color: #005f99; // Колір тексту
             }
 
             input[type="checkbox"] {
@@ -68,12 +80,13 @@ p {
                 color: #333;
 
                 p {
-                    margin: 5px 0;
+                    margin: 8px 0; // Збільшено відступ між параграфами
+                    line-height: 1.5; // Збільшено міжрядковий інтервал
                 }
             }
 
             input[type="checkbox"]:checked + .details {
-                max-height: 100px; /* Достатньо місця для вмісту */
+                max-height: 150px; /* Достатньо місця для вмісту */
             }
         }
     }
