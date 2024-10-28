@@ -6,32 +6,42 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    padding: 20px;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
 header {
     text-align: center;
-    background-color: #005f99;
-    padding: 20px;
+    padding: 1em;
+    background-color: #0077b6;
     color: white;
+
+    .logo img {
+        height: 50px;
+    }
+
+    h1 {
+        margin-top: 10px;
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+        margin-top: 5px;
+    }
 }
 
-.logo img {
-    height: 50px;
-}
-
-h1 {
-    margin-top: 10px;
-    font-size: 1.8em;
-}
-
-p {
-    font-size: 1em;
-    margin-top: 5px;
+main {
+    padding: 20px;
 }
 
 .forecast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+
     h2 {
         margin-bottom: 20px;
         font-size: 1.5em;
@@ -40,20 +50,48 @@ p {
 
     .forecast-days {
         display: flex;
-        flex-direction: column;
-        gap: 10px;
+        justify-content: space-between;
+        gap: 1em;
+        flex-wrap: nowrap; /* Не переносити блоки на новий рядок */
+        overflow-x: auto; /* Прокрутка, якщо екран замалий для всіх блоків */
+        padding: 1em 0;
 
         .day {
-            position: relative;
-            background-color: white;
+            background-color: #ffffff;
             border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 1em;
+            width: 150px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+            text-align: center;
+            position: relative;
+
+            .date {
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .weather-icon {
+                font-size: 2em;
+                margin: 10px 0;
+            }
+
+            .temp-max {
+                color: #e74c3c;
+                font-weight: bold;
+            }
+
+            .temp-min {
+                color: #3498db;
+                font-weight: bold;
+            }
 
             label {
-                display: block;
                 font-weight: bold;
+                display: block;
                 cursor: pointer;
+                color: #0077b6;
+                margin-top: 10px;
             }
 
             input[type="checkbox"] {
@@ -61,20 +99,75 @@ p {
             }
 
             .details {
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-                padding-top: 10px;
-                color: #333;
+                display: none;
+                text-align: left;
+                margin-top: 10px;
+                background-color: #f9f9f9;
+                border-radius: 8px;
+                padding: 10px;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 
                 p {
                     margin: 5px 0;
+                    font-size: 0.9em;
+                    color: #555;
                 }
             }
 
-            input[type="checkbox"]:checked + .details {
-                max-height: 100px; /* Достатньо місця для вмісту */
+            input[type="checkbox"]:checked ~ .details {
+                display: block;
             }
         }
+
+        .day.today {
+            border: 2px solid #e74c3c; // Червона рамка для сьогоднішнього дня
+            background-color: #ffe4e1; // Світло-рожевий фон
+        }
+    }
+}
+
+.detailed-weather {
+    margin-top: 30px;
+
+    h2 {
+        margin-bottom: 10px;
+        font-size: 1.4em;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .forecast-days {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .day {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .day {
+        width: 30%;
     }
 }
