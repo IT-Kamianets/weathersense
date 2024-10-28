@@ -1,4 +1,4 @@
-/* Color Variables */
+/* Загальні стилі */
 $primary-color: #005f99;
 $accent-color: #e74c3c;
 $background-color: #f0f0f0;
@@ -43,7 +43,7 @@ main {
     margin-top: 20px;
 }
 
-/* Forecast Section */
+/* Секція прогнозу */
 .forecast {
     h2 {
         margin-bottom: 20px;
@@ -64,13 +64,13 @@ main {
             text-align: center;
             width: 150px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            
+            cursor: pointer;
+
             .date {
                 font-weight: bold;
                 margin-bottom: 10px;
             }
 
-            /* Weather Icon Styles */
             .weather-icon {
                 font-size: 2em;
                 margin: 10px 0;
@@ -88,16 +88,32 @@ main {
                 color: $rainy-color;
                 font-weight: bold;
             }
+
+            .day-details {
+                display: none;
+                margin-top: 15px;
+                font-size: 0.9em;
+                color: #666;
+
+                p {
+                    margin: 5px 0;
+                }
+            }
+
+            &.today {
+                border: 2px solid $accent-color;
+                background-color: #ffe4e1;
+            }
         }
 
-        .day.today {
-            border: 2px solid $accent-color;
-            background-color: #ffe4e1;
+        /* Показувати деталі, коли активовано */
+        .day .day-details.visible {
+            display: block;
         }
     }
 }
 
-/* Responsive Styles */
+/* Відгук на різні розміри екрану */
 @media (max-width: 768px) {
     .forecast-days {
         justify-content: center;
@@ -112,20 +128,5 @@ main {
 @media (min-width: 769px) and (max-width: 1024px) {
     .forecast-days .day {
         width: 30%;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.5em;
-    }
-
-    h2 {
-        font-size: 1.2em;
-    }
-
-    .day {
-        width: 100%;
-        margin: 5px 0;
     }
 }
