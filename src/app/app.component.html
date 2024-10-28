@@ -16,98 +16,56 @@
     </header>
     <main>
         <section class="forecast">
-            <h2>Прогноз погоди на найближчі дні</h2>
-            <div class="forecast-days">
+            <h2>Прогноз погоди на 7 днів</h2>
+            <div class="weekly-forecast">
                 <!-- День 1 -->
                 <div class="day">
-                    <label for="day1">Вівторок, 15 жовтня 🌧️ +12°C / +3°C</label>
-                    <input type="checkbox" id="day1">
-                    <div class="details">
-                        <p><strong>Схід сонця:</strong> 07:15</p>
-                        <p><strong>Захід сонця:</strong> 18:30</p>
-                        <p><strong>Температура протягом дня:</strong> від +3°C до +12°C</p>
-                        <p><strong>Вітер:</strong> Північний, 3 м/с</p>
-                        <p><strong>Вологість:</strong> 82%</p>
-                        <p><strong>Атмосферний тиск:</strong> 740 мм рт. ст.</p>
-                    </div>
+                    <h3>Вівторок, 15 жовтня</h3>
+                    <div class="temperature">+12°</div>
+                    <img src="day1.png" alt="Weather" class="weather-icon">
+                    <p>Імовірність дощу: 5%</p>
                 </div>
                 <!-- День 2 -->
                 <div class="day">
-                    <label for="day2">Середа, 16 жовтня ☁️ +16°C / +5°C</label>
-                    <input type="checkbox" id="day2">
-                    <div class="details">
-                        <p><strong>Схід сонця:</strong> 07:16</p>
-                        <p><strong>Захід сонця:</strong> 18:28</p>
-                        <p><strong>Температура протягом дня:</strong> від +5°C до +16°C</p>
-                        <p><strong>Вітер:</strong> Північно-східний, 4 м/с</p>
-                        <p><strong>Вологість:</strong> 78%</p>
-                        <p><strong>Атмосферний тиск:</strong> 742 мм рт. ст.</p>
-                    </div>
+                    <h3>Середа, 16 жовтня</h3>
+                    <div class="temperature">+16°</div>
+                    <img src="day2.png" alt="Weather" class="weather-icon">
+                    <p>Імовірність дощу: 2%</p>
                 </div>
                 <!-- День 3 -->
                 <div class="day">
-                    <label for="day3">Четвер, 17 жовтня ☀️ +18°C / +8°C</label>
-                    <input type="checkbox" id="day3">
-                    <div class="details">
-                        <p><strong>Схід сонця:</strong> 07:17</p>
-                        <p><strong>Захід сонця:</strong> 18:25</p>
-                        <p><strong>Температура протягом дня:</strong> від +8°C до +18°C</p>
-                        <p><strong>Вітер:</strong> Східний, 2 м/с</p>
-                        <p><strong>Вологість:</strong> 65%</p>
-                        <p><strong>Атмосферний тиск:</strong> 738 мм рт. ст.</p>
-                    </div>
+                    <h3>Четвер, 17 жовтня</h3>
+                    <div class="temperature">+18°</div>
+                    <img src="day3.png" alt="Weather" class="weather-icon">
+                    <p>Імовірність дощу: 0%</p>
                 </div>
                 <!-- День 4 -->
                 <div class="day">
-                    <label for="day4">П'ятниця, 18 жовтня ☀️ +19°C / +9°C</label>
-                    <input type="checkbox" id="day4">
-                    <div class="details">
-                        <p><strong>Схід сонця:</strong> 07:18</p>
-                        <p><strong>Захід сонця:</strong> 18:23</p>
-                        <p><strong>Температура протягом дня:</strong> від +9°C до +19°C</p>
-                        <p><strong>Вітер:</strong> Південний, 3 м/с</p>
-                        <p><strong>Вологість:</strong> 60%</p>
-                        <p><strong>Атмосферний тиск:</strong> 737 мм рт. ст.</p>
-                    </div>
+                    <h3>П'ятниця, 18 жовтня</h3>
+                    <div class="temperature">+19°</div>
+                    <img src="day4.png" alt="Weather" class="weather-icon">
+                    <p>Імовірність дощу: 10%</p>
                 </div>
                 <!-- День 5 -->
                 <div class="day">
-                    <label for="day5">Субота, 19 жовтня 🌧️ +19°C / +7°C</label>
-                    <input type="checkbox" id="day5">
-                    <div class="details">
-                        <p><strong>Схід сонця:</strong> 07:19</p>
-                        <p><strong>Захід сонця:</strong> 18:20</p>
-                        <p><strong>Температура протягом дня:</strong> від +7°C до +19°C</p>
-                        <p><strong>Вітер:</strong> Південно-східний, 5 м/с</p>
-                        <p><strong>Вологість:</strong> 85%</p>
-                        <p><strong>Атмосферний тиск:</strong> 741 мм рт. ст.</p>
-                    </div>
+                    <h3>Субота, 19 жовтня</h3>
+                    <div class="temperature">+19°</div>
+                    <img src="day5.png" alt="Weather" class="weather-icon">
+                    <p>Імовірність дощу: 20%</p>
                 </div>
                 <!-- День 6 -->
                 <div class="day">
-                    <label for="day6">Неділя, 20 жовтня 🌤️ +15°C / +6°C</label>
-                    <input type="checkbox" id="day6">
-                    <div class="details">
-                        <p><strong>Схід сонця:</strong> 07:20</p>
-                        <p><strong>Захід сонця:</strong> 18:18</p>
-                        <p><strong>Температура протягом дня:</strong> від +6°C до +15°C</p>
-                        <p><strong>Вітер:</strong> Західний, 2 м/с</p>
-                        <p><strong>Вологість:</strong> 70%</p>
-                        <p><strong>Атмосферний тиск:</strong> 739 мм рт. ст.</p>
-                    </div>
+                    <h3>Неділя, 20 жовтня</h3>
+                    <div class="temperature">+15°</div>
+                    <img src="day6.png" alt="Weather" class="weather-icon">
+                    <p>Імовірність дощу: 15%</p>
                 </div>
                 <!-- День 7 -->
                 <div class="day">
-                    <label for="day7">Понеділок, 21 жовтня ☀️ +17°C / +8°C</label>
-                    <input type="checkbox" id="day7">
-                    <div class="details">
-                        <p><strong>Схід сонця:</strong> 07:21</p>
-                        <p><strong>Захід сонця:</strong> 18:15</p>
-                        <p><strong>Температура протягом дня:</strong> від +8°C до +17°C</p>
-                        <p><strong>Вітер:</strong> Південно-західний, 3 м/с</p>
-                        <p><strong>Вологість:</strong> 68%</p>
-                        <p><strong>Атмосферний тиск:</strong> 738 мм рт. ст.</p>
-                    </div>
+                    <h3>Понеділок, 21 жовтня</h3>
+                    <div class="temperature">+17°</div>
+                    <img src="day7.png" alt="Weather" class="weather-icon">
+                    <p>Імовірність дощу: 5%</p>
                 </div>
             </div>
         </section>
