@@ -4,67 +4,203 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Прогноз погоди</title>
-    <link rel="stylesheet" href="app.component.scss">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            background-color: #005f99;
+            padding: 20px;
+            color: white;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        h1 {
+            margin-top: 10px;
+            font-size: 1.8em;
+        }
+        
+        p {
+            font-size: 1em;
+            margin-top: 5px;
+        }
+        
+        main {
+            margin-top: 20px;
+        }
+        
+        .forecast h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        
+        .forecast-days {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .day {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            width: 150px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        .day.today {
+            border: 2px solid #e74c3c;
+            background-color: #ffe4e1;
+        }
+        
+        .date {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .weather-icon {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+        
+        .temp-max {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .temp-min {
+            color: #3498db;
+            font-weight: bold;
+        }
+        
+        .day-details {
+            display: none;
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        .day-details.visible {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
-<!--         <div class="logo">
+        <div class="logo">
             <img src="logo.png" alt="Sinoptik Logo">
-        </div> -->
+        </div>
         <h1>Погода у Кам'янці-Подільському</h1>
         <p>Хмельницька область, Кам'янець-Подільський район</p>
     </header>
 
-    <!-- Forecast Section -->
     <main>
         <section class="forecast">
             <h2>Прогноз погоди на найближчі дні</h2>
             <div class="forecast-days">
-                <div class="day today">
+                <div class="day today" onclick="toggleDetails(this)">
                     <p class="date">Вівторок, 15 жовтня</p>
-                    <div class="weather-icon sunny">☀️</div>
-                    <p class="temp-max">{{weather?.main?.temp.toFixed(0)}}°C</p>
+                    <div class="weather-icon">🌧️</div>
+                    <p class="temp-max">+14°C</p>
                     <p class="temp-min">+3°C</p>
+                    <div class="day-details">
+                        <p>Схід сонця: 06:30</p>
+                        <p>Захід сонця: 18:00</p>
+                        <p>Денна температура: 8°C - 14°C</p>
+                    </div>
                 </div>
-                <div class="day">
+                <div class="day" onclick="toggleDetails(this)">
                     <p class="date">Середа, 16 жовтня</p>
                     <div class="weather-icon">☁️</div>
                     <p class="temp-max">+16°C</p>
                     <p class="temp-min">+5°C</p>
+                    <div class="day-details">
+                        <p>Схід сонця: 06:32</p>
+                        <p>Захід сонця: 18:02</p>
+                        <p>Денна температура: 10°C - 16°C</p>
+                    </div>
                 </div>
-                <div class="day">
+                <div class="day" onclick="toggleDetails(this)">
                     <p class="date">Четвер, 17 жовтня</p>
                     <div class="weather-icon">☀️</div>
                     <p class="temp-max">+18°C</p>
                     <p class="temp-min">+8°C</p>
+                    <div class="day-details">
+                        <p>Схід сонця: 06:33</p>
+                        <p>Захід сонця: 18:04</p>
+                        <p>Денна температура: 12°C - 18°C</p>
+                    </div>
                 </div>
-                <div class="day">
+                <div class="day" onclick="toggleDetails(this)">
                     <p class="date">П'ятниця, 18 жовтня</p>
                     <div class="weather-icon">☀️</div>
                     <p class="temp-max">+19°C</p>
                     <p class="temp-min">+9°C</p>
+                    <div class="day-details">
+                        <p>Схід сонця: 06:34</p>
+                        <p>Захід сонця: 18:05</p>
+                        <p>Денна температура: 12°C - 19°C</p>
+                    </div>
                 </div>
-                <div class="day">
+                <div class="day" onclick="toggleDetails(this)">
                     <p class="date">Субота, 19 жовтня</p>
                     <div class="weather-icon">🌧️</div>
-                    <p class="temp-max">+19°C</p>
+                    <p class="temp-max">+15°C</p>
                     <p class="temp-min">+7°C</p>
+                    <div class="day-details">
+                        <p>Схід сонця: 06:35</p>
+                        <p>Захід сонця: 18:07</p>
+                        <p>Денна температура: 9°C - 15°C</p>
+                    </div>
                 </div>
-                <div class="day">
+                <div class="day" onclick="toggleDetails(this)">
                     <p class="date">Неділя, 20 жовтня</p>
                     <div class="weather-icon">🌤️</div>
-                    <p class="temp-max">+15°C</p>
+                    <p class="temp-max">+17°C</p>
                     <p class="temp-min">+6°C</p>
+                    <div class="day-details">
+                        <p>Схід сонця: 06:36</p>
+                        <p>Захід сонця: 18:08</p>
+                        <p>Денна температура: 11°C - 17°C</p>
+                    </div>
                 </div>
-                <div class="day">
+                <div class="day" onclick="toggleDetails(this)">
                     <p class="date">Понеділок, 21 жовтня</p>
                     <div class="weather-icon">☀️</div>
-                    <p class="temp-max">+17°C</p>
+                    <p class="temp-max">+18°C</p>
                     <p class="temp-min">+8°C</p>
+                    <div class="day-details">
+                        <p>Схід сонця: 06:37</p>
+                        <p>Захід сонця: 18:09</p>
+                        <p>Денна температура: 12°C - 18°C</p>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <script>
+        function toggleDetails(dayElement) {
+            const details = dayElement.querySelector('.day-details');
+            details.classList.toggle('visible');
+        }
+    </script>
 </body>
 </html>
