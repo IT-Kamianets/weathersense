@@ -43,131 +43,79 @@ main {
     padding: 1em;
 
     h2 {
-        margin-bottom: 20px;
-        font-size: 1.5em;
-        color: #333;
+        margin-bottom: 1em;
     }
 
     .forecast-days {
         display: flex;
         justify-content: space-between;
-        gap: 1em;
-        flex-wrap: nowrap; /* Не переносити блоки на новий рядок */
-        overflow-x: auto; /* Прокрутка, якщо екран замалий для всіх блоків */
-        padding: 1em 0;
+        flex-wrap: wrap;
 
         .day {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 1em;
-            width: 150px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px;
             text-align: center;
+            flex: 1 0 calc(14.2857% - 10px);
             position: relative;
 
-            .date {
-                font-weight: bold;
-                margin-bottom: 10px;
+            &.today {
+                border: 2px solid #0077b6;
+                box-shadow: 0 0 10px rgba(0, 119, 182, 0.5);
             }
 
             .weather-icon {
                 font-size: 2em;
-                margin: 10px 0;
-            }
-
-            .temp-max {
-                color: #e74c3c;
-                font-weight: bold;
-            }
-
-            .temp-min {
-                color: #3498db;
-                font-weight: bold;
-            }
-
-            label {
-                font-weight: bold;
-                display: block;
-                cursor: pointer;
-                color: #0077b6;
-                margin-top: 10px;
-            }
-
-            input[type="checkbox"] {
-                display: none;
             }
 
             .details {
                 display: none;
-                text-align: left;
-                margin-top: 10px;
-                background-color: #f9f9f9;
-                border-radius: 8px;
+                position: absolute;
+                background: #f0f0f0;
                 padding: 10px;
-                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 10;
 
-                p {
-                    margin: 5px 0;
-                    font-size: 0.9em;
-                    color: #555;
+                input:checked ~ & {
+                    display: block;
                 }
             }
 
-            input[type="checkbox"]:checked ~ .details {
-                display: block;
+            label {
+                cursor: pointer;
+                color: #0077b6;
             }
-        }
-
-        .day.today {
-            border: 2px solid #e74c3c; // Червона рамка для сьогоднішнього дня
-            background-color: #ffe4e1; // Світло-рожевий фон
         }
     }
 }
 
 .detailed-weather {
-    margin-top: 30px;
+    margin-top: 2em;
 
     h2 {
-        margin-bottom: 10px;
-        font-size: 1.4em;
+        text-align: center;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
+        margin-top: 1em;
 
         th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
+            padding: 10px;
             text-align: center;
+            border: 1px solid #ccc;
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #0077b6;
+            color: white;
         }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    .forecast-days {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-    }
-
-    .day {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .day {
-        width: 30%;
     }
 }
