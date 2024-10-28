@@ -15,7 +15,7 @@ header {
     background-color: #005f99;
     padding: 20px;
     color: white;
-    
+
     .logo img {
         height: 50px;
     }
@@ -57,10 +57,20 @@ main {
         width: 150px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         cursor: pointer;
+        transition: background-color 0.3s ease;
 
         &.today {
             border: 2px solid #e74c3c;
             background-color: #ffe4e1;
+        }
+
+        &.active {
+            background-color: #e0f7fa;
+            border: 2px solid #00bcd4;
+
+            .day-details {
+                display: block;
+            }
         }
 
         .date {
@@ -88,10 +98,6 @@ main {
             margin-top: 15px;
             font-size: 0.9em;
             color: #666;
-
-            &.visible {
-                display: block;
-            }
         }
     }
 }
