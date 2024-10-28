@@ -40,9 +40,10 @@ p {
 
     .weekly-forecast {
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
         gap: 15px;
+        flex-wrap: nowrap; /* Усе в один рядок */
+        overflow-x: auto; /* Прокрутка, якщо не вміщається */
 
         .day {
             background-color: white;
@@ -50,8 +51,8 @@ p {
             padding: 15px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
-            flex: 1 1 30%; /* Задаємо ширину блоків */
-            max-width: 30%; /* Максимальна ширина для більшої естетики */
+            flex: 0 0 auto; /* Блоки не сжимаються */
+            width: 150px; /* Ширина для кожного дня */
             transition: transform 0.2s;
 
             &:hover {
@@ -75,8 +76,10 @@ p {
                 margin-bottom: 10px;
             }
 
-            p {
-                color: #666;
+            select {
+                margin-top: 10px;
+                padding: 5px;
+                font-size: 0.9em;
             }
         }
     }
