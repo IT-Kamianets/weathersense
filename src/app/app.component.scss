@@ -50,12 +50,12 @@ p {
             padding: 15px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
-            flex: 1 1 30%;
-            max-width: 30%;
+            flex: 1 1 30%; /* Задаємо ширину блоків */
+            max-width: 30%; /* Максимальна ширина для більшої естетики */
             transition: transform 0.2s;
 
             &:hover {
-                transform: scale(1.05);
+                transform: scale(1.05); /* Збільшення при наведенні */
             }
 
             h3 {
@@ -64,45 +64,19 @@ p {
                 color: #005f99;
             }
 
-            .daily-forecast {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
+            .temperature {
+                font-size: 2em;
+                font-weight: bold;
+                margin: 10px 0;
+            }
 
-                .hour {
-                    cursor: pointer;
-                    background-color: #f9f9f9;
-                    border: 1px solid #ddd;
-                    border-radius: 5px;
-                    padding: 10px;
-                    transition: background-color 0.2s;
+            .weather-icon {
+                height: 50px; /* Висота картинки */
+                margin-bottom: 10px;
+            }
 
-                    &:hover {
-                        background-color: #e7f3ff; /* Світліший фон при наведенні */
-                    }
-
-                    p {
-                        margin: 5px 0;
-                    }
-
-                    .temperature {
-                        font-size: 1.5em;
-                        font-weight: bold;
-                    }
-
-                    .weather-icon {
-                        height: 50px;
-                        margin-bottom: 5px;
-                    }
-                }
-
-                .extra-info {
-                    display: none; /* Сховане за замовчуванням */
-                    background-color: #f0f8ff;
-                    padding: 10px;
-                    border-radius: 5px;
-                    margin-top: 10px;
-                }
+            p {
+                color: #666;
             }
         }
     }
