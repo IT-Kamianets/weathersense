@@ -4,7 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Прогноз погоди</title>
-    <link rel="stylesheet" href="app.component.scss">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            background-color: #005f99;
+            padding: 20px;
+            color: white;
+        }
+
+        header .logo img {
+            height: 50px;
+        }
+
+        header h1 {
+            margin-top: 10px;
+            font-size: 1.8em;
+        }
+
+        main {
+            margin-top: 20px;
+        }
+
+        .forecast h2 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .forecast-days {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .day {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            width: 150px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .day.today {
+            border: 2px solid #e74c3c;
+            background-color: #ffe4e1;
+        }
+
+        .day.active {
+            background-color: #e0f7fa;
+            border: 2px solid #00bcd4;
+        }
+
+        .date {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .weather-icon {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        .temp-max {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .temp-min {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .day-details {
+            display: none;
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .day-details.visible {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,6 +124,8 @@
                         <p>Схід сонця: 07:30</p>
                         <p>Захід сонця: 18:15</p>
                         <p>Вологість: 75%</p>
+                        <p>Ймовірність опадів: 60%</p>
+                        <p>Швидкість вітру: 10 км/год</p>
                     </div>
                 </div>
                 <div class="day" onclick="toggleDetails(this)">
@@ -38,17 +137,8 @@
                         <p>Схід сонця: 06:32</p>
                         <p>Захід сонця: 18:02</p>
                         <p>Вологість: 80%</p>
-                    </div>
-                </div>
-                <div class="day" onclick="toggleDetails(this)">
-                    <p class="date">Середа, 16 жовтня</p>
-                    <div class="weather-icon">☁️</div>
-                    <p class="temp-max">+16°C</p>
-                    <p class="temp-min">+5°C</p>
-                    <div class="day-details">
-                        <p>Схід сонця: 06:32</p>
-                        <p>Захід сонця: 18:02</p>
-                        <p>Денна температура: 10°C - 16°C</p>
+                        <p>Ймовірність опадів: 20%</p>
+                        <p>Швидкість вітру: 8 км/год</p>
                     </div>
                 </div>
                 <div class="day" onclick="toggleDetails(this)">
@@ -59,51 +149,9 @@
                     <div class="day-details">
                         <p>Схід сонця: 06:33</p>
                         <p>Захід сонця: 18:04</p>
-                        <p>Денна температура: 12°C - 18°C</p>
-                    </div>
-                </div>
-                <div class="day" onclick="toggleDetails(this)">
-                    <p class="date">П'ятниця, 18 жовтня</p>
-                    <div class="weather-icon">☀️</div>
-                    <p class="temp-max">+19°C</p>
-                    <p class="temp-min">+9°C</p>
-                    <div class="day-details">
-                        <p>Схід сонця: 06:34</p>
-                        <p>Захід сонця: 18:05</p>
-                        <p>Денна температура: 12°C - 19°C</p>
-                    </div>
-                </div>
-                <div class="day" onclick="toggleDetails(this)">
-                    <p class="date">Субота, 19 жовтня</p>
-                    <div class="weather-icon">🌧️</div>
-                    <p class="temp-max">+15°C</p>
-                    <p class="temp-min">+7°C</p>
-                    <div class="day-details">
-                        <p>Схід сонця: 06:35</p>
-                        <p>Захід сонця: 18:07</p>
-                        <p>Денна температура: 9°C - 15°C</p>
-                    </div>
-                </div>
-                <div class="day" onclick="toggleDetails(this)">
-                    <p class="date">Неділя, 20 жовтня</p>
-                    <div class="weather-icon">🌤️</div>
-                    <p class="temp-max">+17°C</p>
-                    <p class="temp-min">+6°C</p>
-                    <div class="day-details">
-                        <p>Схід сонця: 06:36</p>
-                        <p>Захід сонця: 18:08</p>
-                        <p>Денна температура: 11°C - 17°C</p>
-                    </div>
-                </div>
-                <div class="day" onclick="toggleDetails(this)">
-                    <p class="date">Понеділок, 21 жовтня</p>
-                    <div class="weather-icon">☀️</div>
-                    <p class="temp-max">+18°C</p>
-                    <p class="temp-min">+8°C</p>
-                    <div class="day-details">
-                        <p>Схід сонця: 06:37</p>
-                        <p>Захід сонця: 18:09</p>
-                        <p>Денна температура: 12°C - 18°C</p>
+                        <p>Вологість: 70%</p>
+                        <p>Ймовірність опадів: 0%</p>
+                        <p>Швидкість вітру: 12 км/год</p>
                     </div>
                 </div>
             </div>
@@ -112,8 +160,15 @@
 
     <script>
         function toggleDetails(element) {
+            const details = element.querySelector('.day-details');
+            const isActive = details.classList.contains('visible');
+            document.querySelectorAll('.day .day-details').forEach(detail => detail.classList.remove('visible'));
             document.querySelectorAll('.day').forEach(day => day.classList.remove('active'));
-            element.classList.toggle('active');
+
+            if (!isActive) {
+                details.classList.add('visible');
+                element.classList.add('active');
+            }
         }
     </script>
 </body>
