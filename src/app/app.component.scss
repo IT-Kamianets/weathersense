@@ -2,7 +2,6 @@
 $primary-color: #005f99;
 $accent-color: #e74c3c;
 $background-color: #f0f0f0;
-$border-color: #ddd;
 $sunny-color: #FFD700;
 $cloudy-color: #C0C0C0;
 $rainy-color: #3498db;
@@ -94,35 +93,6 @@ main {
         .day.today {
             border: 2px solid $accent-color;
             background-color: #ffe4e1;
-        }
-    }
-}
-
-/* Detailed Weather Section */
-.detailed-weather {
-    margin-top: 30px;
-
-    h2 {
-        margin-bottom: 10px;
-        font-size: 1.4em;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-
-        th, td {
-            border: 1px solid $border-color;
-            padding: 8px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
         }
     }
 }
