@@ -21,54 +21,81 @@
                 <!-- День 1 -->
                 <div class="day">
                     <h3>Вівторок, 15 жовтня</h3>
-                    <div class="temperature">+12°</div>
-                    <img src="day1.png" alt="Weather" class="weather-icon">
-                    <p>Імовірність дощу: 5%</p>
+                    <div class="daily-forecast">
+                        <div class="hour" onclick="toggleDetails(this)">
+                            <p>Ранок</p>
+                            <div class="temperature">+9°</div>
+                            <img src="morning.png" alt="Morning Weather" class="weather-icon">
+                            <p>Імовірність дощу: 5%</p>
+                        </div>
+                        <div class="hour" onclick="toggleDetails(this)">
+                            <p>Полудень</p>
+                            <div class="temperature">+14°</div>
+                            <img src="afternoon.png" alt="Afternoon Weather" class="weather-icon">
+                            <p>Імовірність дощу: 2%</p>
+                        </div>
+                        <div class="hour" onclick="toggleDetails(this)">
+                            <p>Вечір</p>
+                            <div class="temperature">+10°</div>
+                            <img src="evening.png" alt="Evening Weather" class="weather-icon">
+                            <p>Імовірність дощу: 12%</p>
+                        </div>
+                        <div class="hour" onclick="toggleDetails(this)">
+                            <p>Ніч</p>
+                            <div class="temperature">+6°</div>
+                            <img src="night.png" alt="Night Weather" class="weather-icon">
+                            <p>Імовірність дощу: 3%</p>
+                        </div>
+                        <div class="extra-info">
+                            <p>Додаткова інформація:</p>
+                            <p>Вітер: 5 м/с, вологість: 60%</p>
+                        </div>
+                    </div>
                 </div>
+                <!-- Інші дні аналогічно -->
                 <!-- День 2 -->
                 <div class="day">
                     <h3>Середа, 16 жовтня</h3>
-                    <div class="temperature">+16°</div>
-                    <img src="day2.png" alt="Weather" class="weather-icon">
-                    <p>Імовірність дощу: 2%</p>
+                    <div class="daily-forecast">
+                        <div class="hour" onclick="toggleDetails(this)">
+                            <p>Ранок</p>
+                            <div class="temperature">+10°</div>
+                            <img src="morning.png" alt="Morning Weather" class="weather-icon">
+                            <p>Імовірність дощу: 10%</p>
+                        </div>
+                        <div class="hour" onclick="toggleDetails(this)">
+                            <p>Полудень</p>
+                            <div class="temperature">+15°</div>
+                            <img src="afternoon.png" alt="Afternoon Weather" class="weather-icon">
+                            <p>Імовірність дощу: 5%</p>
+                        </div>
+                        <div class="hour" onclick="toggleDetails(this)">
+                            <p>Вечір</p>
+                            <div class="temperature">+11°</div>
+                            <img src="evening.png" alt="Evening Weather" class="weather-icon">
+                            <p>Імовірність дощу: 15%</p>
+                        </div>
+                        <div class="hour" onclick="toggleDetails(this)">
+                            <p>Ніч</p>
+                            <div class="temperature">+7°</div>
+                            <img src="night.png" alt="Night Weather" class="weather-icon">
+                            <p>Імовірність дощу: 8%</p>
+                        </div>
+                        <div class="extra-info">
+                            <p>Додаткова інформація:</p>
+                            <p>Вітер: 3 м/с, вологість: 55%</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- День 3 -->
-                <div class="day">
-                    <h3>Четвер, 17 жовтня</h3>
-                    <div class="temperature">+18°</div>
-                    <img src="day3.png" alt="Weather" class="weather-icon">
-                    <p>Імовірність дощу: 0%</p>
-                </div>
-                <!-- День 4 -->
-                <div class="day">
-                    <h3>П'ятниця, 18 жовтня</h3>
-                    <div class="temperature">+19°</div>
-                    <img src="day4.png" alt="Weather" class="weather-icon">
-                    <p>Імовірність дощу: 10%</p>
-                </div>
-                <!-- День 5 -->
-                <div class="day">
-                    <h3>Субота, 19 жовтня</h3>
-                    <div class="temperature">+19°</div>
-                    <img src="day5.png" alt="Weather" class="weather-icon">
-                    <p>Імовірність дощу: 20%</p>
-                </div>
-                <!-- День 6 -->
-                <div class="day">
-                    <h3>Неділя, 20 жовтня</h3>
-                    <div class="temperature">+15°</div>
-                    <img src="day6.png" alt="Weather" class="weather-icon">
-                    <p>Імовірність дощу: 15%</p>
-                </div>
-                <!-- День 7 -->
-                <div class="day">
-                    <h3>Понеділок, 21 жовтня</h3>
-                    <div class="temperature">+17°</div>
-                    <img src="day7.png" alt="Weather" class="weather-icon">
-                    <p>Імовірність дощу: 5%</p>
-                </div>
+                <!-- Продовжте з іншими днями -->
             </div>
         </section>
     </main>
+    <script>
+        function toggleDetails(element) {
+            const extraInfo = element.parentElement.querySelector('.extra-info');
+            extraInfo.style.display = extraInfo.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </body>
 </html>
