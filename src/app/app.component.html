@@ -12,23 +12,34 @@
     <main>
         <section class="forecast">
             <h2>Прогноз погоди на найближчі дні</h2>
-            <div class="forecast-days" *ngIf="weather?.list">
-                <!-- Динамічний прогноз на 5 днів з інтервалом 3 години -->
-                <div *ngFor="let forecast of weather.list" class="day">
-                    <label>
-                        {{ forecast.dt * 1000 | date:'EEEE, d MMMM, HH:mm' }}
-                        {{ forecast.weather[0].main === 'Rain' ? '🌧️' : forecast.weather[0].main === 'Clear' ? '☀️' : forecast.weather[0].main === 'Clouds' ? '☁️' : '🌤️' }}
-                        {{ forecast.main.temp }}°C
-                    </label>
-                    <div class="details">
-                        <p><strong>Температура:</strong> {{ forecast.main.temp }}°C</p>
-                        <p><strong>Відчувається як:</strong> {{ forecast.main.feels_like }}°C</p>
-                        <p><strong>Вологість:</strong> {{ forecast.main.humidity }}%</p>
-                        <p><strong>Тиск:</strong> {{ forecast.main.pressure }} мм рт. ст.</p>
-                        <p><strong>Вітер:</strong> {{ forecast.wind.speed }} м/с</p>
+            <div class="forecast-days" *ngIf="dailyForecasts.length">
+                <div class="days-container">
+                    <div *ngFor="let day of dailyForecasts; let i = index" class="day" (click)="toggleDetails(i)">
+                        <label>
+                            {{ day.date }} 
+                            <span class="temp-range">({{ day.minTemp }}°C - {{ day.maxTemp }}°C)</span>
+                        </label>
                     </div>
                 </div>
-            </div>
+                <div class="hourly-forecasts">
+                    <div *ngIf="selectedDayIndex !== null" class="hours-container">
+                        <h3>Тригодинні інтервали:</h3>
+                        <div *ngFor="let forecast of dailyForecasts[selectedDayIndex].forecasts" class="hour">
+                            <p>
+                                <strong>Час:</strong> {{ forecast.dt * 1000 | date:'HH:mm' }}
+                                <img src="https://openweathermap.org/img/wn/{{ forecast.weather[0].icon }}@2x.png" 
+                                     alt="{{ forecast.weather[0].description }}" 
+                                     class="weather-icon">
+                            </p>
+                            <p><strong>Температура:</strong> {{ forecast.main.temp }}°C</p>
+                            <p><strong>Відчувається як:</strong> {{ forecast.main.feels_like }}°C</p>
+                            <p><strong>Вологість:</strong> {{ forecast.main.humidity }}%</p>
+                            <p><strong>Тиск:</strong> {{ forecast.main.pressure }} мм рт. ст.</p>
+                            <p><strong>Вітер:</strong> {{ forecast.wind.speed }} м/с</p>
+                        </div>
+                    </div>
+                </div>
+            </div>            
         </section>
     </main>
 </body>

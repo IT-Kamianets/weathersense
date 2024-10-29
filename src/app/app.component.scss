@@ -35,33 +35,49 @@ p {
 }
 
 .forecast-days {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Вертикальне розташування */
+}
+
+.days-container {
+    display: flex; /* Визначає контейнер для днів */
+    justify-content: space-between; /* Вирівнює дні в рядку */
+    margin-bottom: 10px; /* Відступ між рядками */
 }
 
 .day {
-    cursor: pointer;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    flex: 1; /* Задає, що дні будуть однакової ширини */
+    text-align: center; /* Вирівнює текст по центру */
+    cursor: pointer; /* Змінює курсор на вказівник при наведенні */
+    padding: 10px; /* Внутрішні відступи */
+    border: 1px solid #ccc; /* Обрамлення для кожного дня */
+    border-radius: 5px; /* Заокруглення країв */
+    background-color: #f9f9f9; /* Колір фону */
 }
 
-.day:hover {
-    background-color: #f0f0f0;
+.hourly-forecasts {
+    display: flex; /* Визначає контейнер для годинних прогнозів */
+    flex-direction: column; /* Вертикальне розташування */
+    padding: 10px; /* Внутрішні відступи */
+    border: 1px solid #ccc; /* Обрамлення для годинних прогнозів */
+    border-radius: 5px; /* Заокруглення країв */
+    background-color: #f0f0f0; /* Колір фону */
 }
 
-.details {
-    display: flex; /* Встановити флекс-контейнер для стовпців */
-    margin-top: 10px;
+.hour {
+    margin: 5px 0; /* Відступи між годинними прогнозами */
+    padding: 5px; /* Внутрішні відступи */
+    border-bottom: 1px solid #ddd; /* Лінія між годинними прогнозами */
 }
 
-.detail-column {
-    flex: 1; /* Кожен стовпець займає однакову частину */
-    margin-right: 15px; /* Відстань між стовпцями */
+.weather-icon {
+    width: 60px; /* Ширина значка */
+    height: auto; /* Автоматична висота */
+    vertical-align: middle; /* Вирівнювання по вертикалі */
+    margin-left: 5px; /* Відступ зліва */
 }
 
-.detail-column:last-child {
-    margin-right: 0; /* Не потрібно відстань для останнього стовпця */
+.temp-range {
+    font-weight: bold; /* Жирний шрифт */
+    color: #007BFF; /* Колір для кращої видимості */
 }
-
