@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
   private apiKey = '746a88c4a60ad969a5a50b35e4f32082';
-  private apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+  private apiUrl = 'https://api.openweathermap.org/data/2.5/forecast';
   ngOnInit(): void {
     this.getWeather('Kiev').subscribe((data) => {
       this.weather = data;
@@ -31,4 +31,5 @@ export class AppComponent implements OnInit {
     const url = `${this.apiUrl}?q=${city}&appid=${this.apiKey}&units=metric`;
     return this.http.get(url);
   }
+  
 }
