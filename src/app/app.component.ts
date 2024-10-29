@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   private apiUrl = 'https://api.openweathermap.org/data/2.5/forecast';
 
   ngOnInit(): void {
-    this.getWeather('Kiev').subscribe((data) => {
+    this.getWeather('Kamyanets-Podilsky').subscribe((data) => {
       this.weather = data;
       console.log(data);
     });
