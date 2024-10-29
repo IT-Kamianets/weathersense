@@ -6,91 +6,68 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    font-weight: 400;
+    font-weight: 100;
     background-color: #f0f0f0;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 header {
-    background-color: #443F5F;
+    text-align: center;
+    background-color: #005f99;
     padding: 30px;
     color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.weather-header {
-    display: flex;
-    justify-content: space-between; /* Вирівнює контент по краях */
-    align-items: center; /* Вирівнює по вертикалі */
-}
-
-.left h1 {
-    margin: 0; /* Прибирає відступи */
-}
-
-.right p {
-    margin: 0; /* Прибирає відступи */
-}
-
 .logo img {
-    height: 60px; /* Збільшено логотип */
+    height: 60px;
 }
 
 h1 {
-   font-family: 'Lato', sans-serif;
-    font-weight: 400;
     margin-top: 15px;
-    font-size: 2.2em; /* Збільшено заголовок */
+    font-size: 2.2em;
 }
 
-p { 
-  font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    font-size: 1.1em; /* Збільшено розмір шрифту */
+p {
+    font-size: 1.1em;
     margin-top: 5px;
 }
 
 .forecast {
-    margin-top: 20px; /* Додано відступ з верхньої частини */
+    margin-top: 20px;
     
     h2 {
-       font-family: 'Lato', sans-serif;
-    font-weight: 400;
         margin-bottom: 20px;
-        font-size: 1.8em; /* Збільшено розмір заголовка прогнозу */
+        font-size: 1.8em;
         color: #333;
-        text-align: center; /* Вирівнювання по центру */
+        text-align: center;
     }
 
     .forecast-days {
         display: flex;
         flex-direction: column;
-        gap: 15px; /* Збільшено проміжок між днями */
+        gap: 15px;
 
         .day {
             position: relative;
             background-color: white;
             border-radius: 8px;
-            padding: 20px; /* Збільшено внутрішній відступ */
+            padding: 20px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s ease;
 
             &:hover {
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Тінь при наведенні */
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             }
 
             label {
                 display: block;
                 font-weight: bold;
                 cursor: pointer;
-                font-size: 1.3em; /* Збільшено розмір шрифту */
-                margin-bottom: 10px; /* Відступ знизу */
-                color: #443F5F; /* Колір тексту */
-            }
-
-            input[type="checkbox"] {
-                display: none;
+                font-size: 1.3em;
+                margin-bottom: 10px;
+                color: #005f99;
             }
 
             .details {
@@ -100,14 +77,14 @@ p {
                 padding-top: 10px;
                 color: #333;
 
-                p {
-                    margin: 8px 0; /* Збільшено відступ між параграфами */
-                    line-height: 1.5; /* Збільшено міжрядковий інтервал */
+                &.expanded {
+                    max-height: 150px; /* При потребі можна налаштувати */
                 }
-            }
 
-            input[type="checkbox"]:checked + .details {
-                max-height: 150px; /* Достатньо місця для вмісту */
+                p {
+                    margin: 8px 0;
+                    line-height: 1.5;
+                }
             }
         }
     }
