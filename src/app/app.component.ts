@@ -15,12 +15,10 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent implements OnInit {
   weather: any;
-  expandedIndex: number | null = null;
 
   constructor(private http: HttpClient) {}
   private apiKey = '746a88c4a60ad969a5a50b35e4f32082';
   private apiUrl = 'https://api.openweathermap.org/data/2.5/forecast';
-
   ngOnInit(): void {
     this.getWeather('Kiev').subscribe((data) => {
       this.weather = data;
@@ -28,12 +26,10 @@ export class AppComponent implements OnInit {
     });
   }
 
-  toggleDetails(index: number): void {
-    this.expandedIndex = this.expandedIndex === index ? null : index;
-  }
-
+  
   getWeather(city: string): Observable<any> {
     const url = `${this.apiUrl}?q=${city}&appid=${this.apiKey}&units=metric`;
     return this.http.get(url);
   }
+  
 }
