@@ -16,14 +16,25 @@
                 <div class="days-container">
                     <div *ngFor="let day of dailyForecasts; let i = index" class="day" (click)="toggleDetails(i)">
                         <label>
-                            {{ day.date }} 
-                            <span class="temp-range">({{ day.minTemp }}°C - {{ day.maxTemp }}°C)</span>
+                            <div>{{ day.date | date: 'EEE' }}</div>  <!-- День тижня -->
+                            <div class="day-number">{{ day.date | date: 'dd' }}</div>  <!-- Число місяця -->
+                            <div>{{ day.date | date: 'MMM' }}</div>  <!-- Місяць -->
+                            <div class="temp-range-container">
+                                <div class="min-temp-container">
+                                    <span class="min-text">min </span>
+                                    <span class="min-value">{{ day.minTemp }}°C</span>
+                                </div>
+                                <div class="max-temp-container">
+                                    <span class="max-text">max </span>
+                                    <span class="max-value">{{ day.maxTemp }}°C</span>
+                                </div>
+                            </div>
                         </label>
                     </div>
                 </div>
+            
                 <div class="hourly-forecasts">
                     <div *ngIf="selectedDayIndex !== null" class="hours-container">
-                        <h3>Тригодинні інтервали:</h3>
                         <div *ngFor="let forecast of dailyForecasts[selectedDayIndex].forecasts" class="hour">
                             <p>
                                 <strong>Час:</strong> {{ forecast.dt * 1000 | date:'HH:mm' }}
