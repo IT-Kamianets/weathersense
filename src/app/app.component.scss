@@ -7,21 +7,32 @@
 body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
-    background-color: #f0f0f0;
+    background: linear-gradient(to right, #f0f0f0, #cce7ff); // Додаємо градієнт
     padding: 40px 20px;
 }
 
+
 header {
-    text-align: center;
     background-color: #005f99;
     padding: 30px;
     color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
+    
+    .weather-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-.logo img {
-    height: 60px;
+    .left {
+        text-align: left;
+    }
+
+    .right {
+        text-align: right;
+        font-size: 1.1em;
+    }
 }
 
 h1 {
@@ -29,55 +40,99 @@ h1 {
     font-size: 2.2em;
 }
 
+h2 {
+    margin: 20px 0; // 20px відступ зверху і знизу, 0 — з боків
+    font-size: 1.8em; // налаштування розміру тексту, якщо потрібно
+    color: #005f99; // колір тексту, що гармонує із заголовком
+}
+
 p {
-    font-size: 1.1em;
     margin-top: 5px;
 }
 
 .forecast-days {
     display: flex;
-    flex-direction: column; /* Вертикальне розташування */
+    flex-direction: column;
 }
 
 .days-container {
-    display: flex; /* Визначає контейнер для днів */
-    justify-content: space-between; /* Вирівнює дні в рядку */
-    margin-bottom: 10px; /* Відступ між рядками */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .day {
-    flex: 1; /* Задає, що дні будуть однакової ширини */
-    text-align: center; /* Вирівнює текст по центру */
-    cursor: pointer; /* Змінює курсор на вказівник при наведенні */
-    padding: 10px; /* Внутрішні відступи */
-    border: 1px solid #ccc; /* Обрамлення для кожного дня */
-    border-radius: 5px; /* Заокруглення країв */
-    background-color: #f9f9f9; /* Колір фону */
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer; // Додаємо курсор pointer
+
+    &:hover {
+        background-color: #deebf7; // Змінюємо фон при наведенні
+    }
+
+    label {
+        cursor: inherit; // Спадкуємо курсор з батьківського елемента
+    }
+}
+
+.day label {
+    display: flex;
+    flex-direction: column; // Розташування елементів стовпчиком
+    align-items: center; // Центрування елементів
+}
+
+.day-number {
+    font-size: 1.5em; // Збільшений розмір шрифту
 }
 
 .hourly-forecasts {
-    display: flex; /* Визначає контейнер для годинних прогнозів */
-    flex-direction: column; /* Вертикальне розташування */
-    padding: 10px; /* Внутрішні відступи */
-    border: 1px solid #ccc; /* Обрамлення для годинних прогнозів */
-    border-radius: 5px; /* Заокруглення країв */
-    background-color: #f0f0f0; /* Колір фону */
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: linear-gradient(to left, #f0f0f0, #cce7ff); // Додаємо градієнт
 }
 
 .hour {
-    margin: 5px 0; /* Відступи між годинними прогнозами */
-    padding: 5px; /* Внутрішні відступи */
-    border-bottom: 1px solid #ddd; /* Лінія між годинними прогнозами */
+    margin: 5px 0;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
 }
 
 .weather-icon {
-    width: 60px; /* Ширина значка */
-    height: auto; /* Автоматична висота */
-    vertical-align: middle; /* Вирівнювання по вертикалі */
-    margin-left: 5px; /* Відступ зліва */
+    width: 60px;
+    height: auto;
+    vertical-align: middle;
+    margin-left: 5px;
 }
 
 .temp-range {
-    font-weight: bold; /* Жирний шрифт */
-    color: #007BFF; /* Колір для кращої видимості */
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.temp-range-container {
+    display: flex; // Використовуємо flexbox для розміщення min і max
+    justify-content: space-between; // Вирівнювання по краях
+    width: 70%; // Ширина на всю доступну область
+    padding: 0 10px; // Невеликий відступ з боків
+}
+
+.min-temp-container, .max-temp-container {
+    display: flex; // Використовуємо flex для вирівнювання тексту
+    flex-direction: column; // Вирівнюємо текст вертикально
+    align-items: center; // Центруємо текст
+}
+
+.min-text, .max-text {
+    font-size: 0.8em; // Зменшений розмір шрифту
+}
+
+.min-value, .max-value {
+    font-size: 1em; // Залишаємо стандартний розмір шрифту
 }
