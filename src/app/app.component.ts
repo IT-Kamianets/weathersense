@@ -22,15 +22,15 @@ export class AppComponent implements OnInit {
 
   private apiKey = '746a88c4a60ad969a5a50b35e4f32082';
   private apiUrl = 'https://api.openweathermap.org/data/2.5/forecast';
-
   ngOnInit(): void {
     this.getWeather('Kamyanets-Podilsky').subscribe((data) => {
-      this.weather = data;
-      this.extractDailyForecasts();
-      console.log(data);
-      
-      // Встановлюємо сьогоднішній день як вибраний
-      this.selectToday();
+        this.weather = data;
+        this.extractDailyForecasts();
+        console.log(data);
+        
+        // Встановлюємо сьогоднішній день як вибраний
+        this.selectToday();
+        this.selectedDayIndex = 0; // Відкриваємо прогноз на сьогоднішній день за замовчуванням
     });
   }
 
@@ -74,11 +74,9 @@ export class AppComponent implements OnInit {
   }
 
   toggleDetails(index: number): void {
-    // Якщо день вже вибрано, закрити його
-    if (this.selectedDayIndex === index) {
-      this.selectedDayIndex = null;
-    } else {
-      this.selectedDayIndex = index; // Вибрати новий день
+    // Якщо день вже вибрано, залишаємо його відкритим
+    if (this.selectedDayIndex !== index) {
+        this.selectedDayIndex = index; // Вибираємо новий день, не закриваючи
     }
   }
 }
